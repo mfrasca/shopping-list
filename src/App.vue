@@ -1,10 +1,13 @@
 <template>
-  <div id="app">
-  <h1> {{ listName }} </h1>
-    <add-item-component/>
-    <items-component/>
-    <change-title-component/>
+<div id="app" class="container">
+  <h2> {{ title }} </h2>
+  <add-item-component :items="items" />
+  <items-component :items="items" />
+  <div class="footer">
+    <hr/>
+    <change-title-component v-model="title" />
   </div>
+</div>
 </template>
 
 <script>
@@ -15,7 +18,8 @@ export default {
   name: 'App',
   data () {
     return {
-      listName: 'standalone'
+      items: [],
+      title: 'standalone'
     }
   },
   components: { AddItemComponent, ItemsComponent, ChangeTitleComponent }

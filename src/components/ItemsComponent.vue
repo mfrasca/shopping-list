@@ -1,12 +1,7 @@
 <template>
   <div class="items-component">
-    <h1>{{ msg }}</h1>
     <ul>
-    <item-component/>
-    <item-component/>
-    <item-component/>
-    <item-component/>
-    <item-component/>
+    <item-component v-for="item in items" :item="item" :key="item.text" />
     </ul>
   </div>
 </template>
@@ -15,11 +10,7 @@
 import ItemComponent from './ItemComponent'
 export default {
   name: 'items-component',
-  data () {
-    return {
-      msg: 'items-component'
-    }
-  },
-  components: { ItemComponent }
+  components: { ItemComponent },
+  props: ['items']
 }
 </script>
