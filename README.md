@@ -1,6 +1,10 @@
-# vue-webpack-config
+# shopping-list
 
 > A Vue.js project
+
+è un progetto che esce fuori da un libro di una signora europea, ma quello è
+solo la base, l'idea è di rompere tutto per rifarlo di volta in volta, un
+po' come "per far ordine bisogna crear disordine".
 
 ## Build Setup
 
