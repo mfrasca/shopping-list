@@ -2,7 +2,8 @@
 <li :class="{ 'removed': item.checked }">
   <div class="checkbox">
     <label>
-      <input v-model="item.checked" type="checkbox">{{ item.text }}
+      <input v-model="item.checked" type="checkbox"/>
+      <span>{{ item.text }}</span>
     </label>
   </div>
 </li>

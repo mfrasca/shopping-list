@@ -1,11 +1,11 @@
 <template>
 <div id="app" class="container">
-  <h2> {{ title }} </h2>
-  <add-item-component :items="items" />
+  <h2> {{ title[0] }} </h2>
+  <add-item-component :items="items" @add="addItem" />
   <items-component :items="items" />
   <div class="footer">
     <hr/>
-    <change-title-component v-model="title" />
+    <change-title-component :value="title" />
   </div>
 </div>
 </template>
@@ -19,7 +19,15 @@ export default {
   data () {
     return {
       items: [],
-      title: 'standalone'
+      title: ['standalone']
+    }
+  },
+  methods: {
+    addItem: function (text) {
+      this.items.push({
+        text: text,
+        checked: false
+      })
     }
   },
   components: { AddItemComponent, ItemsComponent, ChangeTitleComponent }

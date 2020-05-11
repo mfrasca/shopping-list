@@ -1,7 +1,7 @@
 <template>
   <div class="items-component">
     <ul>
-    <item-component v-for="item in items" :item="item" :key="item.text" />
+    <item-component v-for="(item, i) in items" :item="item" :key="i" />
     </ul>
   </div>
 </template>

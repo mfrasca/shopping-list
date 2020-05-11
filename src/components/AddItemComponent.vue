@@ -1,4 +1,8 @@
 <template id="add-item-component">
+  <!--
+      properties: items,
+      events: add
+    -->
   <div class="input-group">
     <input @keyup.enter="addItem" v-model="newItem"
            placeholder="add shopping list item"
@@ -19,11 +23,12 @@ export default {
     }
   },
   methods: {
-    addItem (event) {
-      this.items.push({
-        text: event.target.value,
-        checked: false
-      })
+    addItem: function () {
+      var text = this.newItem.trim()
+      if (text) {
+        this.$emit('add', this.newItem)
+        this.newItem = ''
+      }
     }
   },
   props: ['items']
